@@ -1,0 +1,137 @@
+.categoriesPage {
+    min-height: 80vh;
+    padding: 24px 7%;
+    text-align: center;
+    background: #f5f8f1;
+}
+
+.categoriesPage h1 {
+    color: #24452c;
+    font-size: 40px;
+    margin: 0 0 8px;
+}
+
+.categoriesPage>p {
+    color: #777;
+    margin: 0 0 24px;
+}
+
+.categoryList {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.categoryItem {
+    background: white;
+    padding: 20px;
+    border-radius: 22px;
+    box-shadow: 0 5px 18px rgba(36, 69, 44, 0.10);
+    transition: box-shadow 0.3s ease;
+}
+
+.categoryItemButton {
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+}
+
+.categoryItem img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    margin-bottom: 0;
+}
+
+.categoryItemButton img {
+    border-radius: 22px 22px 0 0;
+}
+
+.categoryItemButton h2,
+.categoryItemButton p {
+    padding: 0 20px;
+}
+
+.categoryItemButton p {
+    margin-bottom: 20px;
+}
+
+.categoryItem h2 {
+    color: #315c3a;
+    font-size: 22px;
+    margin: 15px 0 10px;
+}
+
+.categoryItem p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.categoryItem .plantRating {
+    margin: 0 0 6px;
+}
+
+.categoryItem .plantRatingStar {
+    font-size: 12px;
+}
+
+.categoryItem .plantRatingValue {
+    font-size: 11px;
+}
+
+.categoryItem h3 {
+    color: #28743b;
+    font-family: var(--font-body);
+    font-size: 20px;
+    margin: 8px 0 14px;
+}
+
+.categoryItem > button:not(.categoryItemButton) {
+    background: #28743b;
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 16px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .categoryItem:not(.categoryItemButton):hover {
+        box-shadow: 0 10px 25px rgba(36, 69, 44, 0.16);
+    }
+
+    .categoryItemButton:hover {
+        box-shadow: 0 10px 25px rgba(36, 69, 44, 0.16);
+    }
+}
+
+@media (max-width: 900px) {
+    .categoryList {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .categoriesPage {
+        padding: 20px 5%;
+    }
+
+    .categoriesPage h1 {
+        font-size: 30px;
+    }
+
+    .categoryList {
+        grid-template-columns: 1fr;
+    }
+
+    .categoryItem img {
+        height: 220px;
+    }
+}

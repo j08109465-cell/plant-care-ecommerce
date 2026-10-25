@@ -1,0 +1,152 @@
+.myOrdersPage {
+  max-width: 1200px;
+  margin: -24px auto 0;
+  padding: 8px 24px 64px;
+  background: #f8fbf6;
+}
+
+.myOrdersHeader {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.myOrdersEyebrow {
+  margin: 0 0 6px;
+  color: #5b7b5d;
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.myOrdersHeader h1 {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 6px 0 12px;
+  color: #24452c;
+  font-size: clamp(1.75rem, 3.3vw, 2.4rem);
+  line-height: 1.2;
+}
+
+.myOrdersTitleIcon {
+  font-family: var(--font-body);
+  font-size: 0.68em;
+  line-height: 1;
+}
+
+.myOrdersState {
+  background: #fff;
+  border: 1px solid #dfeee0;
+  border-radius: 18px;
+  box-shadow: 0 16px 30px rgba(28, 67, 33, 0.06);
+  color: #2b4e32;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 28px 22px;
+  text-align: center;
+}
+
+.myOrdersEmpty h2 {
+  color: #24452c;
+  margin: 0 0 10px;
+}
+
+.myOrdersEmpty p {
+  margin: 0;
+  color: #667862;
+}
+
+.myOrdersError {
+  border-color: #f0c7c1;
+  background: #fff8f7;
+  color: #8b3129;
+}
+
+.myOrdersTableWrap {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #e0ebdc;
+  border-radius: 18px;
+  box-shadow: 0 18px 35px rgba(30, 68, 32, 0.06);
+}
+
+.myOrdersTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.myOrdersTable th,
+.myOrdersTable td {
+  padding: 16px 18px;
+  border-bottom: 1px solid #edf2ea;
+  text-align: left;
+  vertical-align: top;
+}
+
+.myOrdersTable th {
+  background: #f1f8f0;
+  color: #24452c;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.myOrdersTable td {
+  color: #425946;
+  font-size: 14px;
+}
+
+.myOrdersTable tbody tr:hover {
+  background: #fafcf9;
+}
+
+.orderStatusBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background: #f9f4d8;
+  color: #8a6a00;
+}
+
+.status-processing {
+  background: #eaf2ff;
+  color: #2b5ea7;
+}
+
+.status-shipped {
+  background: #e3f6ef;
+  color: #1e7057;
+}
+
+.status-delivered {
+  background: #eaf8e8;
+  color: #2d6d2c;
+}
+
+.status-cancelled {
+  background: #fdeae9;
+  color: #a63f3b;
+}
+
+@media (max-width: 768px) {
+  .myOrdersPage {
+    padding: 6px 14px 52px;
+  }
+
+  .myOrdersTable {
+    min-width: 760px;
+  }
+}

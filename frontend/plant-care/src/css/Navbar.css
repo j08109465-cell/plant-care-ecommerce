@@ -1,0 +1,493 @@
+.mainNavbar {
+    --nav-deep: #24452c;
+    --nav-green: #4f8050;
+    --nav-primary: #456d4c;
+    --nav-primary-hover: #345b3e;
+    --nav-soft: #eef4eb;
+    --nav-soft-hover: #e2ecde;
+    background: #fff;
+    border-bottom: 1px solid #e7eee6;
+    box-shadow: 0 4px 18px rgba(32, 62, 38, 0.06);
+    left: 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.loginSuccessToast {
+    background: #eaf4e8;
+    border: 1px solid #d1e5ce;
+    border-radius: 10px;
+    box-shadow: 0 8px 22px rgba(32, 62, 38, 0.12);
+    color: #2e6538;
+    font-size: 14px;
+    font-weight: 700;
+    left: 50%;
+    padding: 11px 20px;
+    position: fixed;
+    top: 88px;
+    transform: translateX(-50%);
+    z-index: 1100;
+}
+
+.navbarTop {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: clamp(10px, 1.1vw, 17px);
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1440px;
+    min-height: 64px;
+    padding: 10px clamp(16px, 2.5vw, 36px);
+    white-space: normal;
+}
+
+.navbarLogo {
+    display: block;
+    flex: 0 0 auto;
+}
+
+.navbarLogo img {
+    display: block;
+    height: auto;
+    max-width: 108px;
+    width: 100%;
+}
+
+.navbarLinks {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    gap: clamp(12px, 1.35vw, 20px);
+}
+
+.navbarLinks a {
+    color: var(--nav-deep);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 0;
+    position: relative;
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.navbarLinks a::after {
+    background: var(--nav-green);
+    border-radius: 2px;
+    bottom: 2px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+    width: 100%;
+}
+
+.navbarLinks a:hover,
+.navbarLinks a:focus-visible {
+    color: var(--nav-green);
+}
+
+.navbarLinks a:hover::after,
+.navbarLinks a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.navbarSearch {
+    flex: 0 0 184px;
+    min-width: 0;
+    position: relative;
+}
+
+.navbarSearchField {
+    align-items: center;
+    background: #f3f8f1;
+    border: 1px solid #d8e6d5;
+    border-radius: 999px;
+    display: flex;
+    min-height: 40px;
+    padding: 3px 5px 3px 14px;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.navbarSearch:focus-within .navbarSearchField {
+    border-color: #8cab87;
+    box-shadow: 0 0 0 3px rgba(49, 92, 58, 0.1);
+}
+
+.navbarSearch input {
+    background: transparent;
+    border: none;
+    color: #26352a;
+    flex: 1;
+    font-size: 13px;
+    min-width: 0;
+    outline: none;
+}
+
+.navbarSearch input::placeholder {
+    color: #7e8e7d;
+}
+
+.navbarSearchField > button {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    color: #171b17;
+    cursor: pointer;
+    display: flex;
+    flex: 0 0 30px;
+    height: 30px;
+    justify-content: center;
+    padding: 0;
+    transition: background-color 160ms ease;
+    width: 30px;
+}
+
+.navbarSearchField > button:hover {
+    background: #e5f0e2;
+}
+
+.navbarSearchField > button svg {
+    fill: none;
+    height: 17px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 2;
+    width: 17px;
+}
+
+.searchSuggestions {
+    background: #fff;
+    border: 1px solid #e0e9dd;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(30, 58, 35, 0.15);
+    left: 0;
+    max-height: min(360px, calc(100vh - 100px));
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 6px;
+    position: fixed;
+    z-index: 2000;
+}
+
+.searchSuggestion {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    border-radius: 9px;
+    color: #263b2b;
+    cursor: pointer;
+    display: flex;
+    font: inherit;
+    gap: 10px;
+    min-height: 40px;
+    padding: 8px 10px;
+    text-align: left;
+    width: 100%;
+}
+
+.searchSuggestion:hover,
+.searchSuggestion:focus-visible,
+.searchSuggestion.isActive {
+    background: #f0f7ee;
+    outline: none;
+}
+
+.searchSuggestion img {
+    background: #f1f5ef;
+    border-radius: 8px;
+    flex: 0 0 34px;
+    height: 34px;
+    object-fit: cover;
+    width: 34px;
+}
+
+.noSearchSuggestions {
+    color: #667565;
+    font-size: 13px;
+    margin: 0;
+    padding: 12px 10px;
+}
+
+.wishlistNavIcon {
+    align-items: center;
+    color: #171b17;
+    display: inline-flex;
+    flex: 0 0 36px;
+    height: 40px;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    transition: color 160ms ease;
+    width: 36px;
+}
+
+.wishlistNavIcon svg {
+    fill: currentColor;
+    height: 28px;
+    width: 28px;
+}
+
+.wishlistNavIcon:hover,
+.wishlistNavIcon:focus-visible {
+    color: #c24f68;
+}
+
+.wishlistBadge {
+    align-items: center;
+    background: #c24f68;
+    border: 2px solid #fff;
+    border-radius: 999px;
+    color: white;
+    display: flex;
+    font-size: 10px;
+    font-weight: 700;
+    height: 18px;
+    justify-content: center;
+    min-width: 18px;
+    padding: 0 3px;
+    position: absolute;
+    right: -2px;
+    top: -1px;
+}
+
+.cartNavLink {
+    align-items: center;
+    background: #f7faf6;
+    border: 1px solid #e1e9df;
+    border-radius: 50%;
+    color: #171b17;
+    display: inline-flex;
+    flex: 0 0 40px;
+    height: 40px;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease;
+    width: 40px;
+}
+
+.cartNavLink:hover {
+    background: #edf5e9;
+    color: #171b17;
+}
+
+.cartNavLink svg {
+    fill: none;
+    height: 23px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    width: 23px;
+}
+
+.cartNavLink svg circle {
+    fill: currentColor;
+    stroke: none;
+}
+
+.cartCount {
+    align-items: center;
+    background: #4f8050;
+    border: 2px solid #fff;
+    border-radius: 999px;
+    color: white;
+    display: inline-flex;
+    font-size: 10px;
+    font-weight: 700;
+    height: 18px;
+    justify-content: center;
+    min-width: 18px;
+    padding: 0 3px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+}
+
+.authButtons {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 8px;
+}
+
+.authButtons button {
+    border: 1px solid var(--nav-green);
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 650;
+    min-height: 36px;
+    padding: 0 14px;
+    transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.authButtons .adminBtn {
+    align-items: center;
+    background: #fff;
+    border: 1px solid #dce8d7;
+    border-radius: 999px;
+    color: var(--nav-deep);
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: 650;
+    min-height: 36px;
+    padding: 0 14px;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.authButtons .adminBtn:hover {
+    background: var(--nav-soft);
+    border-color: #d0dfca;
+    color: var(--nav-primary);
+}
+
+.authButtons .logoutBtn {
+    background: #f8f7ef;
+    border-color: #e2e8dc;
+    color: var(--nav-deep);
+}
+
+.authButtons .logoutBtn:hover {
+    background: #eef2e7;
+    border-color: #d5dfd0;
+}
+
+.signupBtn {
+    background: var(--nav-primary);
+    border-color: var(--nav-primary);
+    color: #fffdf8;
+}
+
+.signupBtn:hover {
+    background: var(--nav-primary-hover);
+    border-color: var(--nav-primary-hover);
+}
+
+.loginBtn {
+    background: var(--nav-soft);
+    border-color: #dce8d7;
+    color: var(--nav-deep);
+}
+
+.loginBtn:hover {
+    background: var(--nav-soft-hover);
+    border-color: #d0dfca;
+}
+
+.mainNavbar a:focus-visible,
+.mainNavbar button:focus-visible {
+    outline: 2px solid #6e936e;
+    outline-offset: 3px;
+}
+
+@media (max-width: 1100px) {
+    .navbarTop {
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-start;
+        min-height: 58px;
+        padding: 6px 18px;
+    }
+
+    .navbarLogo img {
+        max-width: 96px;
+    }
+
+    .navbarLinks {
+        gap: 13px;
+        flex-basis: 100%;
+        justify-content: center;
+        order: 1;
+    }
+
+    .navbarLinks a {
+        font-size: 14px;
+    }
+
+    .navbarSearch {
+        flex-basis: 165px;
+    }
+
+    .authButtons button,
+    .authButtons .adminBtn {
+        padding: 0 13px;
+    }
+}
+
+@media (max-width: 720px) {
+    .navbarTop {
+        display: grid;
+        gap: 6px 8px;
+        grid-template-areas:
+            "logo search wishlist cart"
+            "links links links links"
+            "auth auth auth auth";
+        grid-template-columns: auto minmax(0, 1fr) 32px 36px;
+        min-height: 0;
+        padding: 8px 12px;
+    }
+
+    .navbarLogo img {
+        max-width: 82px;
+    }
+
+    .navbarLogo {
+        grid-area: logo;
+    }
+
+    .navbarSearch {
+        flex-basis: auto;
+        grid-area: search;
+    }
+
+    .wishlistNavIcon {
+        grid-area: wishlist;
+        height: 34px;
+        width: 32px;
+    }
+
+    .wishlistNavIcon svg {
+        height: 24px;
+        width: 24px;
+    }
+
+    .cartNavLink {
+        flex-basis: 36px;
+        grid-area: cart;
+        height: 36px;
+        width: 36px;
+    }
+
+    .navbarLinks {
+        flex-wrap: wrap;
+        gap: 2px 12px;
+        grid-area: links;
+        justify-content: center;
+    }
+
+    .navbarLinks a {
+        font-size: 12px;
+        padding: 3px 0;
+    }
+
+    .authButtons {
+        gap: 6px;
+        grid-area: auth;
+        justify-content: flex-end;
+    }
+
+    .authButtons button,
+    .authButtons .adminBtn {
+        font-size: 11px;
+        min-height: 32px;
+        padding: 0 10px;
+    }
+}

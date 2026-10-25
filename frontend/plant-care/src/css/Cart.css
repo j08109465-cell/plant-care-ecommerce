@@ -1,0 +1,261 @@
+.cartPage {
+    margin-top: -24px;
+    min-height: 80vh;
+    padding: 12px 7% 45px;
+    background-color: #f8fbf6;
+}
+
+.cartPage>h1 {
+    align-items: center;
+    color: #245c35;
+    display: flex;
+    font-size: 36px;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.cartTitleIcon {
+    fill: none;
+    height: 0.78em;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    width: 0.78em;
+}
+
+.cartTitleIcon circle {
+    fill: currentColor;
+    stroke: none;
+}
+
+.cartPage>p {
+    color: #687568;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.cartPage .cartNotice {
+    background: #eaf8e8;
+    border: 1px solid #b7dfb5;
+    border-radius: 10px;
+    color: #245c35;
+    margin: -15px auto 25px;
+    max-width: 500px;
+    padding: 12px 16px;
+    text-align: center;
+}
+
+.cartItems {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+.cartContent {
+    align-items: start;
+    display: grid;
+    gap: 28px;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+}
+
+.cartItem {
+    align-items: center;
+    column-gap: 25px;
+    display: grid;
+    grid-template-columns: 130px minmax(0, 1fr) auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(36, 69, 44, 0.08);
+}
+
+.cartImage {
+    width: 130px;
+    height: 130px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #edf4e9;
+}
+
+.cartImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.cartInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.cartInfo h2 {
+    color: #245c35;
+    margin-bottom: 8px;
+}
+
+.cartInfo p {
+    color: #687568;
+    margin-bottom: 8px;
+}
+
+.cartInfo h3 {
+    color: #28743b;
+    margin-bottom: 12px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-top: 2px;
+    padding-left: 155px;
+}
+
+.quantity button {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #347a43;
+    border-radius: 8px;
+    background-color: #edf4e9;
+    color: #245c35;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.quantity span {
+    font-weight: bold;
+    color: #245c35;
+}
+
+.removeBtn {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    background-color: #fff0ed;
+    color: #c0392b;
+    cursor: pointer;
+}
+
+.cartSummary {
+    margin: 0;
+    padding: 25px;
+    width: 100%;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(36, 69, 44, 0.08);
+}
+
+.cartSummary h2 {
+    color: #245c35;
+    margin-bottom: 20px;
+}
+
+.cartSummary p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #687568;
+}
+
+.cartSummary h3 {
+    color: #28743b;
+    padding-top: 15px;
+    border-top: 1px solid #e1e9de;
+    margin-bottom: 20px;
+}
+
+.cartSummary button,
+.emptyCart button {
+    width: 100%;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 9px;
+    background-color: #347a43;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cartSummary button:hover,
+.emptyCart button:hover {
+    background-color: #245c35;
+}
+
+.cartCheckoutContinue p {
+    color: #687568;
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.emptyCart {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 40px 25px;
+    text-align: center;
+    background-color: white;
+    border-radius: 18px;
+}
+
+.emptyCart h2 {
+    color: #245c35;
+    margin-bottom: 15px;
+}
+
+.emptyCart p {
+    color: #687568;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 900px) {
+    .cartContent {
+        grid-template-columns: minmax(0, 1fr) minmax(250px, 320px);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    .cartPage {
+        padding: 10px 5% 30px;
+    }
+
+    .cartContent {
+        grid-template-columns: 1fr;
+    }
+
+    .cartItem {
+        column-gap: 15px;
+        grid-template-columns: 100px minmax(0, 1fr);
+        row-gap: 12px;
+    }
+
+    .cartImage {
+        width: 100px;
+        height: 100px;
+    }
+
+    .cartInfo {
+        flex: 1;
+    }
+
+    .removeBtn {
+        grid-column: 2;
+        justify-self: start;
+    }
+
+    .quantity {
+        grid-column: 1 / -1;
+        padding-left: 0;
+    }
+
+    .cartSummary {
+        width: 100%;
+    }
+}

@@ -1,0 +1,589 @@
+.productsPage {
+    margin-top: -24px;
+    min-height: 80vh;
+    padding: 12px max(5%, calc((100% - 1440px) / 2)) 64px;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(221, 235, 215, 0.7), transparent 42%),
+        linear-gradient(180deg, #f8faf5 0%, #f5f7f1 100%);
+    color: #304638;
+}
+
+body .productsPage > .productsToast {
+    background: #28683a;
+    border: 1px solid #d5e8d6;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(39, 73, 46, 0.2);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+    max-width: min(360px, calc(100vw - 40px));
+    padding: 12px 18px;
+    position: fixed;
+    right: 24px;
+    top: calc(var(--products-sticky-top, 75px) + 16px);
+    z-index: 1101;
+}
+
+.productsHeader {
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.productsHeader h1 {
+    align-items: center;
+    color: #234b35;
+    display: flex;
+    font-size: clamp(38px, 5vw, 56px);
+    gap: 12px;
+    justify-content: center;
+    letter-spacing: -1.8px;
+    line-height: 1.12;
+    margin: 4px 0 0;
+}
+
+.productsHeadingLeaf {
+    filter: drop-shadow(0 4px 7px rgba(67, 112, 68, 0.18));
+    height: 0.58em;
+    width: 0.58em;
+}
+
+.productsEyebrow {
+    background: rgba(231, 240, 226, 0.82);
+    border: 1px solid rgba(92, 128, 87, 0.12);
+    border-radius: 999px;
+    color: #64815e;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 7px 13px;
+}
+
+.featuredPlants {
+    margin: 0 auto 38px;
+    max-width: 1000px;
+}
+
+.featuredPlantsHeading {
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.featuredPlantsHeading h2 {
+    color: #245c35;
+    font-size: clamp(25px, 3vw, 32px);
+    letter-spacing: -0.6px;
+    margin: 6px 0 0;
+}
+
+.featuredPlantsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.productsLayout {
+    align-items: start;
+    display: grid;
+    gap: clamp(20px, 2.5vw, 34px);
+    grid-template-columns: minmax(245px, 290px) minmax(0, 1fr);
+    text-align: left;
+}
+
+.productsFilters {
+    background: rgba(255, 255, 252, 0.94);
+    border: 1px solid #e2e9dc;
+    border-radius: 22px;
+    box-shadow: 0 14px 38px rgba(39, 73, 46, 0.085);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-height: calc(100vh - var(--products-sticky-top, 0px) - 32px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 20px 21px 23px;
+    position: sticky;
+    top: calc(var(--products-sticky-top, 0px) + 16px);
+    z-index: 2;
+}
+
+.productsFilterHeading {
+    align-items: center;
+    border-bottom: 1px solid #e9eee5;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+.productsFilters h2 {
+    color: #294b38;
+    font-size: 20px;
+    margin: 0;
+}
+
+.productsFilters > label,
+.productsPriceRange label {
+    color: #526858;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    font-weight: 700;
+    gap: 9px;
+    min-width: 0;
+}
+
+.productsFilters input,
+.productsFilters select {
+    background-color: #f8faf6;
+    border: 1px solid #dfe8da;
+    border-radius: 12px;
+    box-sizing: border-box;
+    color: #344b39;
+    font: inherit;
+    font-size: 14px;
+    height: 46px;
+    min-width: 0;
+    padding: 0 13px;
+    width: 100%;
+    transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.productsFilters input:focus,
+.productsFilters select:focus {
+    background-color: #fff;
+    border-color: #83a77e;
+    box-shadow: 0 0 0 4px rgba(120, 152, 121, 0.13);
+    outline: none;
+}
+
+.productsFilters input::placeholder {
+    color: #9aa69a;
+}
+
+.productsFilters select {
+    cursor: pointer;
+}
+
+.productsPriceRange {
+    border: 0;
+    border-top: 1px solid #edf1e9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    min-width: 0;
+    padding: 17px 0 0;
+}
+
+.productsPriceRange legend,
+.productsRatingFilter legend {
+    color: #526858;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0;
+}
+
+.productsPriceValues {
+    color: #42634a;
+    display: flex;
+    font-size: 12px;
+    font-weight: 700;
+    justify-content: space-between;
+}
+
+.productsPriceRange label {
+    display: block;
+    line-height: 0;
+}
+
+.productsFilters .productsPriceRange input[type="range"] {
+    accent-color: #367747;
+    cursor: pointer;
+    height: 18px;
+    padding: 0;
+}
+
+.clearProductsFilters {
+    background: transparent;
+    border: 0;
+    border-radius: 8px;
+    color: #66836a;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 7px 9px;
+    transition: background-color 180ms ease, color 180ms ease;
+}
+
+.clearProductsFilters:hover {
+    background: #edf4e9;
+    color: #285a34;
+}
+
+.productsRatingFilter {
+    border: 0;
+    border-top: 1px solid #edf1e9;
+    margin: 0;
+    padding: 16px 0 0;
+}
+
+.ratingFilterOptions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.ratingFilterOptions button {
+    background: #f8faf6;
+    border: 1px solid #e2e9df;
+    border-radius: 9px;
+    color: #526855;
+    cursor: pointer;
+    flex: 1;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 10px 7px;
+    transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.ratingFilterOptions button:hover,
+.ratingFilterOptions button.active {
+    background: #e9f2e7;
+    border-color: #9ab895;
+    box-shadow: 0 3px 9px rgba(52, 92, 66, 0.08);
+    color: #2e6538;
+    transform: translateY(-1px);
+}
+
+.productsResultCount {
+    background: #edf3e9;
+    border: 1px solid #e3ebde;
+    border-radius: 999px;
+    color: #547052;
+    display: table;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0 0 17px;
+    padding: 7px 13px;
+}
+
+.productsCartMessage {
+    background: #edf6ea;
+    border: 1px solid #d8e8d5;
+    border-radius: 12px;
+    color: #2e6538;
+    font-size: 14px;
+    margin: 0 0 15px;
+    padding: 10px 13px;
+}
+
+.productsGrid {
+    scroll-margin-top: calc(var(--products-sticky-top, 0px) + 16px);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.noProductsFound {
+    color: #687568;
+    grid-column: 1 / -1;
+    margin: 24px 0;
+    text-align: center;
+}
+
+.productItem {
+    background: linear-gradient(180deg, #fff 0%, #fffefa 100%);
+    border: 1px solid #e5ebdf;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(36, 69, 44, 0.07);
+    min-width: 0;
+    overflow: hidden;
+    transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.productItem:hover {
+    border-color: #cbdcc5;
+    box-shadow: 0 16px 34px rgba(36, 69, 44, 0.13);
+    transform: translateY(-4px);
+}
+
+.productImage {
+    position: relative;
+    width: 100%;
+    height: clamp(190px, 18vw, 235px);
+    overflow: hidden;
+    background: linear-gradient(135deg, #edf4e9, #e5eee0);
+    border-radius: 19px 19px 0 0;
+}
+
+.productImage img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 450ms ease;
+}
+
+.productItem:hover .productImage img {
+    transform: scale(1.035);
+}
+
+.productImage img.roseImage,
+.productImage img.cactusImage {
+    object-fit: cover;
+}
+
+.productImage img.userAddedProductImage {
+    border-radius: inherit;
+    object-fit: contain;
+}
+
+.plantCategoryBadge {
+    background: rgba(255, 255, 250, 0.95);
+    border: 1px solid rgba(49, 86, 64, 0.12);
+    border-radius: 20px;
+    bottom: 10px;
+    color: #355e3d;
+    font-size: 11px;
+    font-weight: 700;
+    left: 10px;
+    max-width: calc(100% - 20px);
+    overflow: hidden;
+    padding: 6px 11px;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.productCardContent {
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    padding: 18px;
+}
+
+.productName {
+    background: none;
+    border: 0;
+    color: #294f35;
+    cursor: pointer;
+    font: inherit;
+    font-size: 18px;
+    font-weight: 750;
+    line-height: 1.3;
+    margin: 0 0 8px;
+    padding: 0;
+    text-align: left;
+}
+
+.productName:hover {
+    color: #28743b;
+    text-decoration: underline;
+}
+
+.productReview {
+    align-items: center;
+    color: #748072;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 11px;
+    gap: 6px;
+    min-height: 19px;
+}
+
+.productReview .plantRating {
+    gap: 4px;
+}
+
+.productReview .plantRatingStar {
+    font-size: 11px;
+}
+
+.productReview .plantRatingValue {
+    font-size: 11px;
+}
+
+.productPrice {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 12px 0 6px;
+}
+
+.productPrice h3 {
+    color: #28743b;
+    font-size: 21px;
+    margin: 0;
+}
+
+.productOriginalPrice {
+    color: #899289;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+.productDiscount {
+    color: #397447;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.productStock {
+    color: #397447;
+    font-size: 12px;
+    font-weight: 650;
+    margin: 0 0 14px;
+}
+
+.productStock.lowStock {
+    color: #b06d2f;
+}
+
+.productCardActions {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: auto;
+}
+
+.productCardActions button {
+    border: 1px solid #28743b;
+    border-radius: 10px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    min-height: 38px;
+    padding: 8px 10px;
+    transition: background 160ms ease, color 160ms ease;
+}
+
+.productCardActions .addToCartButton {
+    background: linear-gradient(135deg, #347b45, #28683a);
+    color: #fff;
+}
+
+.productCardActions .addToCartButton:hover:not(:disabled) {
+    background: linear-gradient(135deg, #2d6f3d, #205b30);
+}
+
+.productCardActions .buyNowButton {
+    background: #fff;
+    color: #28743b;
+    grid-column: 1 / -1;
+}
+
+.productCardActions .buyNowButton:hover:not(:disabled) {
+    background: #f0f6ee;
+}
+
+.productCardActions button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.visuallyHidden {
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.productsFilters button:focus-visible,
+.productCardActions button:focus-visible,
+.productName:focus-visible {
+    outline: 3px solid rgba(71, 131, 77, 0.42);
+    outline-offset: 2px;
+}
+
+.productCardActions input:focus-visible {
+    outline: 2px solid #6e9a70;
+    outline-offset: 1px;
+}
+
+.productImage {
+    position: relative;
+}
+
+@media (max-width: 1120px) {
+    .productsGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .productsLayout {
+        grid-template-columns: 1fr;
+    }
+
+    .productsFilters {
+        max-height: none;
+        overflow: visible;
+        position: static;
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        box-shadow: 0 10px 28px rgba(39, 73, 46, 0.08);
+        z-index: auto;
+    }
+
+    .productsFilterHeading,
+    .productsPriceRange,
+    .productsRatingFilter {
+        grid-column: 1 / -1;
+    }
+
+    .productsFilterHeading {
+        border-bottom: 1px solid #edf0ea;
+    }
+}
+
+@media (max-width: 550px) {
+    .productsPage {
+        padding: 10px 5% 48px;
+    }
+
+    .productsHeader {
+        margin-bottom: 18px;
+    }
+
+    .productsHeader h1 {
+        font-size: clamp(36px, 10vw, 44px);
+        gap: 9px;
+    }
+
+    .productsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .productsFilters {
+        display: flex;
+        gap: 17px;
+        padding: 19px;
+    }
+
+    .productImage {
+        height: clamp(215px, 62vw, 280px);
+    }
+
+    .productCardContent {
+        min-height: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .productItem,
+    .productImage img,
+    .productsFilters button,
+    .productsFilters input,
+    .productsFilters select,
+    .productCardActions button {
+        transition: none;
+    }
+}

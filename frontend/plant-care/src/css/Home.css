@@ -1,0 +1,700 @@
+.home {
+    --home-ink: #274638;
+    --home-green: #537b59;
+    --home-muted: #6e7c70;
+    --home-cream: #f7f6ef;
+    color: var(--home-ink);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.hero {
+    background:
+        radial-gradient(ellipse at 5% 8%, rgba(216, 229, 205, 0.48), transparent 38%),
+        #f7f6ef;
+    padding: clamp(20px, 3vw, 40px) max(4%, calc((100% - 1440px) / 2));
+}
+
+.heroCarousel {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 32px;
+    box-shadow: 0 24px 64px rgba(43, 67, 47, 0.12);
+    isolation: isolate;
+    overflow: hidden;
+    position: relative;
+}
+
+.heroTrack {
+    display: flex;
+    transition: transform 750ms cubic-bezier(0.22, 0.72, 0.24, 1);
+    will-change: transform;
+}
+
+.heroSlide {
+    align-items: center;
+    background:
+        radial-gradient(ellipse at 82% 15%, rgba(206, 223, 186, 0.55), transparent 29%),
+        linear-gradient(115deg, #f7f6ef 0%, #f3f5ec 54%, #e9efe2 100%);
+    box-sizing: border-box;
+    display: grid;
+    flex: 0 0 100%;
+    gap: clamp(30px, 5vw, 78px);
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.88fr);
+    min-height: 570px;
+    overflow: hidden;
+    padding: clamp(48px, 6.5vw, 88px) clamp(36px, 8vw, 112px) 92px;
+    position: relative;
+}
+
+.heroSlide::before,
+.heroSlide::after {
+    border: 1px solid rgba(83, 123, 89, 0.12);
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+}
+
+.heroSlide::before {
+    height: 310px;
+    right: 24%;
+    top: -205px;
+    width: 310px;
+}
+
+.heroSlide::after {
+    bottom: -250px;
+    height: 360px;
+    left: 32%;
+    width: 360px;
+}
+
+.heroSlide:nth-child(2) {
+    background:
+        radial-gradient(ellipse at 82% 15%, rgba(213, 224, 190, 0.58), transparent 29%),
+        linear-gradient(115deg, #f5f3e9 0%, #edf1e5 55%, #e2ecdf 100%);
+}
+
+.heroContent {
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+}
+
+.heroSlide[aria-hidden="false"] .heroContent {
+    animation: heroContentReveal 650ms ease both;
+}
+
+.heroSmallText {
+    align-items: center;
+    color: #52765a;
+    display: inline-flex;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
+
+.heroSmallText::before {
+    background: #93a979;
+    border-radius: 50%;
+    content: "";
+    height: 8px;
+    margin-right: 10px;
+    width: 8px;
+}
+
+.heroContent h1 {
+    color: #254936;
+    font-size: clamp(3.5rem, 6.5vw, 6rem);
+    letter-spacing: -0.055em;
+    line-height: 1.02;
+    margin: 0 0 22px;
+}
+
+.heroContent h1 span {
+    color: #738c5b;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.heroDescription {
+    color: #68786b;
+    font-size: clamp(1rem, 1.45vw, 1.15rem);
+    line-height: 1.8;
+    margin: 0;
+    max-width: 480px;
+}
+
+.heroContent button {
+    align-items: center;
+    background: #345c42;
+    border: 1px solid #345c42;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(52, 92, 66, 0.18);
+    color: #fffdf8;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 15px;
+    font-weight: 700;
+    gap: 12px;
+    margin-top: 30px;
+    padding: 15px 28px;
+    transition: background 180ms ease, box-shadow 180ms ease;
+}
+
+.heroContent button span {
+    font-size: 19px;
+    line-height: 1;
+}
+
+.heroContent button:hover {
+    background: #264a35;
+    box-shadow: 0 12px 24px rgba(52, 92, 66, 0.24);
+}
+
+.heroImage {
+    aspect-ratio: 1 / 1;
+    background: radial-gradient(circle, rgba(255, 253, 248, 0.7), rgba(211, 225, 196, 0.35) 68%, transparent 70%);
+    border-radius: 50%;
+    filter: drop-shadow(0 24px 28px rgba(43, 67, 47, 0.14));
+    isolation: isolate;
+    justify-self: end;
+    max-width: 460px;
+    overflow: visible;
+    position: relative;
+    width: 100%;
+}
+
+.heroImage::before,
+.heroImage::after {
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+}
+
+.heroImage::before {
+    border: 1px solid rgba(83, 123, 89, 0.24);
+    inset: -5%;
+    z-index: -1;
+}
+
+
+
+.home .heroImage img {
+    border-radius: 50%;
+    clip-path: circle(49% at 50% 50%);
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 42%;
+    width: 100%;
+}
+
+.heroControls {
+    align-items: center;
+    bottom: 25px;
+    display: flex;
+    gap: 12px;
+    position: absolute;
+    right: clamp(36px, 8vw, 112px);
+    z-index: 2;
+}
+
+.heroArrow {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(67, 100, 70, 0.18);
+    border-radius: 50%;
+    color: #315a3d;
+    cursor: pointer;
+    display: grid;
+    font-size: 18px;
+    height: 40px;
+    justify-items: center;
+    padding: 0;
+    transition: background 180ms ease;
+    width: 40px;
+}
+
+.heroArrow:hover {
+    background: #fff;
+}
+
+.heroDots {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+}
+
+.heroDot {
+    background: rgba(49, 90, 61, 0.28);
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    height: 8px;
+    padding: 0;
+    transition: background 220ms ease, width 220ms ease;
+    width: 8px;
+}
+
+.heroDot.isActive {
+    background: #3f6b48;
+    width: 23px;
+}
+
+@keyframes heroContentReveal {
+    from {
+        opacity: 0.4;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .heroTrack {
+        transition: none;
+    }
+
+    .heroSlide[aria-hidden="false"] .heroContent {
+        animation: none;
+    }
+
+}
+
+.categories,
+.featured,
+.whyPlantCare {
+    padding: clamp(52px, 6vw, 78px) max(7%, calc((100% - 1240px) / 2));
+    text-align: center;
+}
+
+.categories,
+.whyPlantCare {
+    background: #fffdf8;
+}
+
+.featured {
+    background: #f0f3e9;
+}
+
+.categories h2,
+.featured h2,
+.whyPlantCare h2 {
+    color: #2c503b;
+    font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+    letter-spacing: -0.04em;
+    margin: 0 0 10px;
+}
+
+.categories>p,
+.featured>p,
+.whyPlantCare>p {
+    color: #748075;
+    margin: 0 0 36px;
+}
+
+.categoryCards {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.categoryCard {
+    background: #f5f5ed;
+    border: 1px solid #e7e9de;
+    border-radius: 22px;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 12px 12px 22px;
+    transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.categoryCard:hover {
+    border-color: #c8d5bd;
+    box-shadow: 0 14px 32px rgba(41, 69, 48, 0.12);
+}
+
+.categoryCard img {
+    border-radius: 15px;
+    display: block;
+    height: 190px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.categoryCard h3 {
+    color: #345b42;
+    font-size: 1.15rem;
+    margin: 18px 0 5px;
+}
+
+.categoryCard p {
+    color: #758076;
+    font-size: 14px;
+    margin: 0 0 15px;
+}
+
+.categoryCard button {
+    background: transparent;
+    border: 0;
+    color: #537b59;
+    cursor: pointer;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 4px 8px;
+    transition: color 180ms ease;
+}
+
+.categoryCard button:hover {
+    color: #a56569;
+}
+
+.homeViewAllButton {
+    background: #345c42;
+    border: 1px solid #345c42;
+    border-radius: 999px;
+    color: #fffdf8;
+    cursor: pointer;
+    display: block;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 28px auto 0;
+    padding: 13px 30px;
+    transition: background 180ms ease;
+}
+
+.homeViewAllButton:hover {
+    background: #264a35;
+}
+
+.featured .productsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.homeFeaturedProduct {
+    text-align: left;
+}
+
+.homeFeaturedDescription {
+    color: #687568;
+    font-size: 13px;
+    line-height: 1.55;
+    margin: 0 0 14px;
+}
+
+.homeCartMessage {
+    background: #edf4e9;
+    border: 1px solid #dce8d7;
+    border-radius: 10px;
+    color: #345c42;
+    margin: 0 auto 18px;
+    max-width: 1120px;
+    padding: 10px 14px;
+}
+
+.homeFeaturedActions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.homeFeaturedActions .productQuantity {
+    grid-column: 1 / -1;
+    justify-content: space-between;
+}
+
+.homeFeaturedActions .buyNowButton {
+    grid-column: auto;
+}
+
+.homeQuantityControl {
+    align-items: center;
+    background: #f4f7f0;
+    border: 1px solid #dce5d5;
+    border-radius: 999px;
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    min-height: 34px;
+    padding: 2px 5px;
+}
+
+.homeQuantityControl span {
+    color: #345c42;
+    font-size: 14px;
+    font-weight: 700;
+    min-width: 16px;
+    text-align: center;
+}
+
+.productCardActions button.homeQuantityButton {
+    align-items: center;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    color: #345c42;
+    display: inline-flex;
+    font-size: 20px;
+    height: 26px;
+    justify-content: center;
+    line-height: 1;
+    padding: 0;
+    width: 26px;
+}
+
+.productCardActions button.homeQuantityButton:hover:not(:disabled) {
+    background: #e1ebdc;
+    color: #294b38;
+}
+
+.productCardActions button.homeQuantityButton:disabled {
+    color: #aab6a5;
+    cursor: not-allowed;
+}
+
+.homeFeaturedActions button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+@media (max-width: 1120px) {
+    .featured .productsGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .featured .productsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.whyCards {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.whyCard {
+    background: #f5f5ed;
+    border: 1px solid #e7e9de;
+    border-radius: 20px;
+    padding: 28px 22px;
+    transition: box-shadow 200ms ease;
+}
+
+.whyCard:hover {
+    box-shadow: 0 12px 28px rgba(41, 69, 48, 0.1);
+}
+
+.whyIcon {
+    border-radius: 50%;
+    display: block;
+    height: 78px;
+    margin: 0 auto 16px;
+    object-fit: contain;
+    width: 78px;
+}
+
+.whyCard h3 {
+    color: #345b42;
+    font-size: 1.12rem;
+    margin: 0 0 8px;
+}
+
+.whyCard p {
+    color: #748075;
+    font-size: 14px;
+    margin: 0;
+}
+
+.homeCTA {
+    background:
+        radial-gradient(ellipse at 8% 0%, rgba(255, 255, 255, 0.55), transparent 42%),
+        #e6ecdf;
+    border: 1px solid #d8e2d0;
+    border-radius: 28px;
+    color: #294c38;
+    margin: 0 auto 70px;
+    max-width: 1240px;
+    padding: clamp(42px, 6vw, 64px) 25px;
+    text-align: center;
+}
+
+.homeCTA h2 {
+    color: #294c38;
+    font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+    margin: 0 0 13px;
+}
+
+.homeCTA p {
+    color: #637665;
+    font-size: 16px;
+    line-height: 1.75;
+    margin: 0 auto 24px;
+    max-width: 590px;
+}
+
+.homeCTA button {
+    background: #345c42;
+    border: 1px solid #345c42;
+    border-radius: 999px;
+    color: #fffdf8;
+    cursor: pointer;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 13px 28px;
+    transition: background 180ms ease;
+}
+
+.homeCTA button:hover {
+    background: #264a35;
+}
+
+@media (max-width: 900px) {
+    .heroSlide {
+        gap: 34px;
+        grid-template-columns: minmax(0, 1fr) minmax(250px, 0.9fr);
+        min-height: 500px;
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .heroContent h1 {
+        font-size: clamp(3.2rem, 7vw, 4.8rem);
+    }
+
+    .heroControls {
+        right: 6%;
+    }
+
+    .categoryCards,
+    .plantCards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding: 16px 4% 28px;
+    }
+
+    .heroCarousel {
+        border-radius: 24px;
+    }
+
+    .heroSlide {
+        gap: 25px;
+        grid-template-columns: minmax(0, 1fr);
+        min-height: auto;
+        padding: 38px 7% 82px;
+    }
+
+    .heroContent {
+        max-width: 100%;
+    }
+
+    .heroContent h1 {
+        font-size: clamp(3.1rem, 14vw, 4.3rem);
+        margin-bottom: 15px;
+    }
+
+    .heroSmallText {
+        font-size: 10px;
+        margin-bottom: 14px;
+    }
+
+    .heroDescription {
+        font-size: 0.94rem;
+        line-height: 1.65;
+    }
+
+    .heroImage {
+        justify-self: center;
+        max-width: 330px;
+    }
+
+    .heroControls {
+        bottom: 20px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
+    .heroArrow {
+        height: 36px;
+        width: 36px;
+    }
+
+    .categories,
+    .featured,
+    .whyPlantCare {
+        padding: 48px 6%;
+    }
+
+    .categoryCards {
+        gap: 14px;
+    }
+
+    .categoryCard {
+        padding: 9px 9px 16px;
+    }
+
+    .categoryCard img {
+        height: 145px;
+    }
+
+    .categoryCard h3 {
+        font-size: 1rem;
+        margin-top: 13px;
+    }
+
+    .categoryCard p {
+        font-size: 12px;
+    }
+
+    .featured .productsGrid {
+        gap: 14px;
+    }
+
+    .whyCards {
+        gap: 14px;
+        grid-template-columns: 1fr;
+    }
+
+    .homeCTA {
+        border-radius: 22px;
+        margin: 0 5% 44px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .categoryCards {
+        grid-template-columns: 1fr;
+    }
+
+    .categoryCard img {
+        height: 190px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home *,
+    .home *::before,
+    .home *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

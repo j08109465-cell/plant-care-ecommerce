@@ -1,0 +1,26 @@
+.plantRating {
+    align-items: center;
+    display: inline-flex;
+    gap: 7px;
+    line-height: 1;
+}
+
+.plantRatingStars {
+    display: inline-flex;
+    gap: 1px;
+    letter-spacing: 0;
+}
+
+.plantRatingStar {
+    background: linear-gradient(90deg, #e8b34e var(--star-fill), #d7ded4 var(--star-fill));
+    background-clip: text;
+    color: transparent;
+    font-size: 12px;
+    -webkit-background-clip: text;
+}
+
+.plantRatingValue {
+    color: #728071;
+    font-size: 12px;
+    font-weight: 700;
+}

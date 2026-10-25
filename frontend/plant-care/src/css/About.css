@@ -1,0 +1,591 @@
+.about {
+    --about-forest: #183f2b;
+    --about-green: #327044;
+    --about-leaf: #6b9f4e;
+    --about-muted: #67766a;
+    --about-line: #e2eadf;
+    --about-cream: #fbfcf8;
+    min-height: 100vh;
+    overflow: hidden;
+    background: var(--about-cream);
+    color: var(--about-forest);
+}
+
+.about * {
+    box-sizing: border-box;
+}
+
+.aboutLeafIcon {
+    display: inline-block;
+    object-fit: contain;
+}
+
+.aboutLeafIcon--tag {
+    width: 15px;
+    height: 15px;
+    margin-right: 7px;
+    vertical-align: -3px;
+}
+
+.aboutLeafIcon--heading {
+    width: 0.78em;
+    height: 0.78em;
+    margin-left: 0.18em;
+    vertical-align: -0.02em;
+}
+
+.aboutLeafIcon--care {
+    width: 25px;
+    height: 25px;
+}
+
+.aboutTag {
+    display: inline-block;
+    margin: 0 0 20px;
+    padding: 9px 15px;
+    border: 1px solid rgba(75, 123, 74, 0.12);
+    border-radius: 999px;
+    background: #edf4e8;
+    color: #47784b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.35px;
+}
+
+.about .aboutHero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 64px;
+    padding: 82px max(8%, calc((100% - 1180px) / 2));
+    border: 0;
+    background: linear-gradient(120deg, #edf5e8 0%, #f7f8ef 58%, #fbfcf8 100%);
+    box-shadow: none;
+}
+
+.aboutHero::before,
+.aboutMission::before,
+.aboutCTA::after {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: url("../assets/logo-design-transparent.png") center / contain no-repeat;
+    content: "";
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.aboutHero::before {
+    top: 24px;
+    left: 3%;
+    transform: rotate(-28deg);
+}
+
+.aboutHeroContent {
+    z-index: 1;
+    flex: 1;
+    max-width: 550px;
+}
+
+.aboutHero h1,
+.aboutStoryContent h2,
+.aboutMission h2,
+.aboutCareIntro h2,
+.aboutSectionHeading h2,
+.aboutCTA h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: -0.035em;
+}
+
+.aboutHero h1 {
+    margin: 0 0 22px;
+    color: var(--about-forest);
+    font-size: clamp(42px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1.08;
+}
+
+.aboutHero h1 span {
+    color: var(--about-leaf);
+}
+
+.aboutHeroContent>p {
+    max-width: 480px;
+    margin: 0 0 30px;
+    color: var(--about-muted);
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.aboutShopBtn {
+    display: inline-block;
+    padding: 15px 25px;
+    border: 1px solid var(--about-green);
+    border-radius: 999px;
+    background: var(--about-green);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.aboutShopBtn:hover {
+    transform: translateY(-2px);
+    background: var(--about-forest);
+    box-shadow: 0 10px 24px rgba(30, 73, 44, 0.16);
+}
+
+.aboutShopBtn:focus-visible {
+    outline: 3px solid #a7c994;
+    outline-offset: 3px;
+}
+
+.aboutHeroImage {
+    z-index: 1;
+    flex: 1;
+    max-width: 490px;
+    position: relative;
+}
+
+.aboutHeroImage::after {
+    position: absolute;
+    z-index: -1;
+    inset: 17px -17px -17px 17px;
+    border: 1px solid rgba(74, 121, 71, 0.2);
+    border-radius: 30px;
+    content: "";
+}
+
+.aboutHeroImage>img {
+    display: block;
+    width: 100%;
+    height: 430px;
+    border-radius: 28px;
+    object-fit: cover;
+    box-shadow: 0 20px 48px rgba(41, 67, 47, 0.15);
+}
+
+.aboutStory {
+    display: flex;
+    align-items: center;
+    gap: 76px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 100px 7%;
+}
+
+.aboutStoryImage,
+.aboutStoryContent {
+    flex: 1;
+    min-width: 0;
+}
+
+.aboutStoryImage {
+    position: relative;
+}
+
+.aboutStoryImage::before {
+    position: absolute;
+    z-index: -1;
+    top: -18px;
+    left: -18px;
+    width: 105px;
+    height: 105px;
+    border-radius: 30px 10px 30px 10px;
+    background: #e7f0e1;
+    content: "";
+}
+
+.aboutStoryImage img {
+    display: block;
+    width: 100%;
+    height: 390px;
+    border-radius: 26px;
+    object-fit: cover;
+    box-shadow: 0 16px 42px rgba(41, 67, 47, 0.1);
+}
+
+.aboutStoryContent h2,
+.aboutMission h2,
+.aboutCareIntro h2,
+.aboutSectionHeading h2 {
+    color: var(--about-forest);
+    font-size: clamp(32px, 3.2vw, 42px);
+    line-height: 1.2;
+}
+
+.aboutStoryContent h2 {
+    margin: 0 0 22px;
+}
+
+.aboutStoryContent p {
+    margin: 0 0 16px;
+    color: var(--about-muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.about .aboutMission {
+    position: relative;
+    overflow: hidden;
+    padding: 72px 12%;
+    border: 0;
+    background: #edf4e8;
+    box-shadow: none;
+    text-align: center;
+}
+
+.aboutMission::before {
+    right: 5%;
+    bottom: -32px;
+    width: 190px;
+    height: 190px;
+    transform: rotate(24deg);
+}
+
+.aboutMission .aboutTag,
+.aboutMission h2,
+.aboutMission>p {
+    position: relative;
+    z-index: 1;
+}
+
+.aboutMission h2 {
+    margin: 0 0 18px;
+}
+
+.aboutMission>p {
+    max-width: 760px;
+    margin: 0 auto;
+    color: var(--about-muted);
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.aboutMission>p+p {
+    margin-top: 14px;
+}
+
+.aboutCare {
+    display: grid;
+    align-items: center;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 60px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 92px 7%;
+}
+
+.aboutCareIntro h2 {
+    margin: 0 0 16px;
+}
+
+.aboutCareIntro>p {
+    margin: 0;
+    color: var(--about-muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.aboutCareGrid {
+    display: grid;
+    gap: 14px;
+}
+
+.aboutCareCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    padding: 20px 22px;
+    border: 1px solid var(--about-line);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 8px 22px rgba(42, 75, 45, 0.035);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.aboutCareCard:hover {
+    transform: translateY(-2px);
+    border-color: #c9ddc2;
+    box-shadow: 0 12px 28px rgba(42, 75, 45, 0.09);
+}
+
+.aboutCareCard>span {
+    display: inline-flex;
+    flex: 0 0 46px;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: #edf4e8;
+}
+
+.aboutCareCard h3 {
+    margin: 1px 0 5px;
+    color: #315b37;
+    font-family: "Manrope", "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+}
+
+.aboutCareCard p {
+    margin: 0;
+    color: #778075;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.about .aboutBenefits {
+    padding: 85px 8%;
+}
+
+.aboutSectionHeading {
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.aboutSectionHeading h2 {
+    font-size: 36px;
+    color: #294c30;
+    margin: 0 0 12px;
+}
+
+.aboutSectionHeading>p {
+    margin: 0;
+    color: #7a8578;
+    font-size: 16px;
+}
+
+.aboutBenefitGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.about .aboutBenefitCard {
+    padding: 30px 22px;
+    border: 1px solid #e6eddf;
+    border-radius: 18px;
+    background: white;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.about .aboutBenefitCard:hover {
+    box-shadow: 0 12px 30px rgba(42, 75, 45, 0.09);
+}
+
+.aboutBenefitCard>span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #edf5e8;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.aboutBenefitImage {
+    display: block;
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    filter: saturate(1.35) contrast(1.12) drop-shadow(0 2px 2px rgba(38, 76, 42, 0.18));
+}
+
+.aboutBenefitImage--greenLiving {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.aboutBenefitCard h3 {
+    font-size: 18px;
+    color: #315b37;
+    margin: 0 0 12px;
+}
+
+.aboutBenefitCard p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #778075;
+}
+
+.about .aboutCTA {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto 76px;
+    padding: 68px 8%;
+    width: min(1080px, 84%);
+    border: 1px solid #deead8;
+    border-radius: 30px;
+    background: linear-gradient(125deg, #e5f0df, #f3f7ec 65%, #edf4e8);
+    box-shadow: 0 14px 38px rgba(42, 75, 45, 0.065);
+    text-align: center;
+}
+
+.aboutCTA::after {
+    right: 4%;
+    bottom: -66px;
+    width: 185px;
+    height: 185px;
+    transform: rotate(-22deg);
+}
+
+.aboutCTA h2,
+.aboutCTA>p,
+.aboutCTA .aboutShopBtn {
+    position: relative;
+    z-index: 1;
+}
+
+.aboutCTA h2 {
+    margin: 0 0 15px;
+    color: var(--about-forest);
+    font-size: clamp(30px, 3vw, 40px);
+}
+
+.aboutCTA>p {
+    margin: 0 0 25px;
+    color: var(--about-muted);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+@media (max-width: 1000px) {
+    .about .aboutHero {
+        gap: 40px;
+        padding: 64px 6%;
+    }
+
+    .aboutHeroImage>img {
+        height: 360px;
+    }
+
+    .aboutStory {
+        gap: 48px;
+        padding: 78px 7%;
+    }
+
+    .aboutCare {
+        gap: 35px;
+        padding: 74px 7%;
+    }
+
+    .aboutBenefitGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .about .aboutHero {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 40px;
+        padding: 48px 7%;
+    }
+
+    .aboutHero h1 {
+        font-size: 40px;
+    }
+
+    .aboutHeroContent>p {
+        font-size: 15px;
+    }
+
+    .aboutHeroImage {
+        max-width: calc(100% - 10px);
+        margin-left: 0;
+    }
+
+    .aboutHeroImage>img {
+        height: 310px;
+    }
+
+    .aboutHeroImage::after {
+        inset: 12px -10px -12px 10px;
+    }
+
+    .aboutStory {
+        flex-direction: column;
+        gap: 38px;
+        padding: 62px 7%;
+    }
+
+    .aboutStoryImage,
+    .aboutStoryContent {
+        width: 100%;
+    }
+
+    .aboutStoryImage img {
+        height: 300px;
+    }
+
+    .aboutStoryContent h2,
+    .aboutMission h2,
+    .aboutCareIntro h2 {
+        font-size: 31px;
+    }
+
+    .aboutSectionHeading h2 {
+        font-size: 29px;
+    }
+
+    .about .aboutMission {
+        padding: 56px 8%;
+    }
+
+    .aboutMission>p {
+        font-size: 15px;
+    }
+
+    .aboutCare {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 62px 7%;
+    }
+
+    .aboutBenefits {
+        padding: 55px 6%;
+    }
+
+    .aboutBenefitGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .about .aboutBenefitCard {
+        padding: 25px 20px;
+    }
+
+    .about .aboutCTA {
+        width: 90%;
+        margin-bottom: 48px;
+        padding: 50px 7%;
+        border-radius: 24px;
+    }
+
+    .aboutCTA h2 {
+        font-size: 29px;
+    }
+
+    .aboutCTA>p {
+        font-size: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aboutShopBtn,
+    .aboutCareCard,
+    .aboutBenefitCard {
+        transition: none;
+    }
+}

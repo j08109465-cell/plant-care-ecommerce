@@ -1,0 +1,56 @@
+.wishlistHeartButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    padding: 0;
+    border: 1px solid rgba(49, 86, 64, 0.14);
+    border-radius: 9px;
+    background: #fff;
+    color: #a44e59;
+    cursor: pointer;
+    transition: transform 180ms ease, background 180ms ease;
+}
+
+.wishlistHeartButton svg {
+    width: 22px;
+    height: 22px;
+}
+
+.wishlistHeartButton path {
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+}
+
+.productItem .wishlistHeartButton,
+.plantCard .wishlistHeartButton {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid rgba(49, 86, 64, 0.14);
+    border-radius: 9px;
+    background: #fff;
+    color: #a44e59;
+}
+
+.wishlistHeartButton:hover,
+.productItem .wishlistHeartButton:hover,
+.plantCard .wishlistHeartButton:hover {
+    background: #fff;
+    color: #a33342;
+    transform: scale(1.06);
+}
+
+.wishlistHeartButton:focus-visible {
+    outline: 3px solid #79a982;
+    outline-offset: 2px;
+}
